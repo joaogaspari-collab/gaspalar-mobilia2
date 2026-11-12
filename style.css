@@ -34,6 +34,43 @@ img {
   max-width: 100%;
 }
 
+/* Tela de Abertura Animada (Splash Screen CSS Puro) */
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cafe);
+  animation: recolherCortina 0.8s cubic-bezier(0.77, 0, 0.175, 1) 1.6s forwards;
+  pointer-events: none;
+}
+
+.abertura-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: entradaLogoAbertura 1.4s ease forwards;
+}
+
+.abertura-conteudo img {
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 1.25rem;
+  border: 0.15rem solid var(--bege);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.35);
+}
+
+.abertura-conteudo span {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  color: var(--bege);
+}
+
 /* Cabeçalho e Navegação */
 .topo {
   position: sticky;
@@ -462,6 +499,37 @@ nav a:hover::after {
 }
 
 /* Keyframes das Animações */
+@keyframes entradaLogoAbertura {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(1rem);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.06) translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-1rem);
+  }
+}
+
+@keyframes recolherCortina {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -503,11 +571,11 @@ nav a:hover::after {
 }
 
 .hero-texto {
-  animation: aparecer 0.9s ease both;
+  animation: aparecer 0.9s ease 1.8s both;
 }
 
 .hero-imagem {
-  animation: aparecer 0.9s ease 0.2s both;
+  animation: aparecer 0.9s ease 2s both;
 }
 
 /* Responsividade */
