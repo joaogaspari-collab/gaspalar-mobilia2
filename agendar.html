@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar | Gaspalar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="index.html">
+      <img src="img/images.jpg LOGO GASPALAR.jpg" alt="Logo da Gaspalar">
+      <span>Gaspalar</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html#colecao">Coleção</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="agendar.html">Agendar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="agendar">
+      <h1 class="titulo-secao">Agende com a Gaspalar</h1>
+      <p class="subtitulo">Escolha o tipo de atendimento e preencha os dados abaixo.</p>
+
+      <form class="form-card" action="obrigado.html" method="get">
+        <fieldset class="tipos">
+          <legend>Tipo de atendimento</legend>
+          <label class="tipo">
+            <input type="radio" name="tipo" value="consulta" checked>
+            <span>Consulta</span>
+          </label>
+          <label class="tipo">
+            <input type="radio" name="tipo" value="visita">
+            <span>Visita</span>
+          </label>
+          <label class="tipo">
+            <input type="radio" name="tipo" value="conversa">
+            <span>Conversa</span>
+          </label>
+        </fieldset>
+
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="data">Data desejada</label>
+            <input type="date" id="data" name="data" required>
+          </div>
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <select id="horario" name="horario" required>
+              <option value="">Selecione</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem (opcional)</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte o que você procura"></textarea>
+        </div>
+
+        <button class="btn" type="submit">Enviar pedido</button>
+      </form>
+
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Gaspalar. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
