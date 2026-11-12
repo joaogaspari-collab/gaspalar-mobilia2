@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agendar | Gaspalar</title>
+  <title>Agendar Visita | Gaspalar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -20,76 +20,73 @@
         <li><a href="index.html#inicio">Início</a></li>
         <li><a href="index.html#colecao">Coleção</a></li>
         <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
         <li><a href="agendar.html">Agendar</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="agendar">
-      <h1 class="titulo-secao">Agende com a Gaspalar</h1>
-      <p class="subtitulo">Escolha o tipo de atendimento e preencha os dados abaixo.</p>
+    <section class="pagina-agendar">
+      <div class="agendar-info">
+        <h1 class="titulo-secao">Agende sua visita</h1>
+        <p>Venha conhecer de perto o toque da madeira e o conforto dos nossos estofados, ou solicite um atendimento personalizado.</p>
+        
+        <div class="info-box">
+          <h3>Showroom Gaspalar</h3>
+          <p>Segunda a Sexta: 09h às 18h<br>Sábado: 09h às 13h</p>
+        </div>
 
-      <form class="form-card" action="obrigado.html" method="get">
-        <fieldset class="tipos">
-          <legend>Tipo de atendimento</legend>
-          <label class="tipo">
-            <input type="radio" name="tipo" value="consulta" checked>
-            <span>Consulta</span>
-          </label>
-          <label class="tipo">
-            <input type="radio" name="tipo" value="visita">
-            <span>Visita</span>
-          </label>
-          <label class="tipo">
-            <input type="radio" name="tipo" value="conversa">
-            <span>Conversa</span>
-          </label>
-        </fieldset>
+        <div class="info-box">
+          <h3>Atendimento Consultivo</h3>
+          <p>Ajudamos você a escolher a peça ideal para a sua sala de jantar ou estar.</p>
+        </div>
+      </div>
+
+      <form class="form-agendar" action="#confirmado">
+        <h2>Preencha seus dados</h2>
 
         <div class="campo">
           <label for="nome">Nome completo</label>
-          <input type="text" id="nome" name="nome" required>
+          <input type="text" id="nome" name="nome" placeholder="Ex: Maria Silva" required>
         </div>
 
-        <div class="linha">
-          <div class="campo">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="campo">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-          </div>
+        <div class="campo">
+          <label for="telefone">WhatsApp / Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
         </div>
 
-        <div class="linha">
+        <div class="campo">
+          <label for="modelo">Peça de interesse</label>
+          <select id="modelo" name="modelo">
+            <option value="curvo">Cadeira encosto curvo</option>
+            <option value="tecido">Cadeira estofada em tecido</option>
+            <option value="uxua">Poltrona ÚXUA 226</option>
+            <option value="todos">Quero conhecer toda a coleção</option>
+          </select>
+        </div>
+
+        <div class="campo-duplo">
           <div class="campo">
-            <label for="data">Data desejada</label>
+            <label for="data">Melhor data</label>
             <input type="date" id="data" name="data" required>
           </div>
           <div class="campo">
-            <label for="horario">Horário</label>
-            <select id="horario" name="horario" required>
-              <option value="">Selecione</option>
-              <option>09:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>14:00</option>
-              <option>15:00</option>
-              <option>16:00</option>
+            <label for="periodo">Período</label>
+            <select id="periodo" name="periodo">
+              <option value="manha">Manhã</option>
+              <option value="tarde">Tarde</option>
             </select>
           </div>
         </div>
 
         <div class="campo">
-          <label for="mensagem">Mensagem (opcional)</label>
-          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte o que você procura"></textarea>
+          <label for="mensagem">Observações (opcional)</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte-nos sobre o seu espaço ou dúvida..."></textarea>
         </div>
 
-        <button class="btn" type="submit">Enviar pedido</button>
+        <button type="submit" class="btn btn-full">Confirmar agendamento</button>
       </form>
-
     </section>
   </main>
 
